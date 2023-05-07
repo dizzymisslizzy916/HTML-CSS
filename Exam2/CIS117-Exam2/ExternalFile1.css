@@ -1,0 +1,70 @@
+/* Liz Crittenden Exam 2
+ ExternalFile.css - an external style sheet
+      for use with index1, menu, coupons and events html files*/
+	  
+  /*specifications for top banner*/
+	 #topbanner {
+		width: 97%;
+		height: 160px;
+		margin-left: 1%;
+		margin-bottom: 0;
+		padding-bottom: 3px;
+		text-align: center;
+		background-color: tan;
+	}
+		
+	body {
+		color: black;
+		background-color: AntiqueWhite;
+		font-size: 20px;
+	}
+	/*specifications for h1 content*/
+	h1 {
+		text-align: center;
+		font-family: papyrus;
+		font-size: 36px;
+	}
+	
+	p{
+		text-align: center;
+		font-family: papyrus;
+	}
+	#container {
+		text-align: center;
+		font-family: papyrus;
+		font-size: 26px;
+	}
+	/*specifications for left content*/
+	#leftcontent {
+		float: left;
+		margin-left:1%;
+		margin-top: 25px;
+		padding-right: 2%;
+		width: 30%;
+		height: 473px;
+		justify-content: center;
+		font-family: monaco;
+		color: black;
+	}
+	/*specifications for center content*/
+	#centercontent {
+		word-wrap: break-word;
+		float: left;
+		padding-left: 1%;
+		padding-right: 2%;
+		margin-top: 25px;
+		width: 30%;
+		justify-content: center;
+		font-family: monaco;
+		color: black;
+	}
+	/*specifications for right content*/
+	#rightcontent {
+		float: left;
+		margin-top: 25px;
+		margin-right: 0px;
+		width: 32%;
+		justify-content: center;
+		font-family: monaco;
+		color: black;
+	}
