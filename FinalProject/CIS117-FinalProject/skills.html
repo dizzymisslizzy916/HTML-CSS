@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title>Work Examples</title>
+			<meta charset = "utf-8"/>
+			<meta name="description" content="CIS117 Assignment 8" /> 
+			<meta name="author" content="Liz Crittenden" />
+			<meta name="keywords" content="html, tags, heading" />
+		<!--style for body, container, top banner, left center and right content-->
+	 <link rel = "stylesheet"  type = "text/css"
+          href = "ExternalFile.css" />
+	</head>
+		<body>
+		<div id="topbanner">
+			<img src ="csc.jpg" alt ="cscpic">
+			<img src ="logo.jpg" alt ="mylogo">
+			<img src ="selfie.jpg" alt ="myselfie">
+		</div>
+		<!--container centers links to related pages-->
+		<div id = "container">
+			<a href="index.html">View my profile here.</a>
+			<a href="resume.html">View my resume here.</a>
+			<a href="contact.html">Contact me here.</a><br />
+			Examples of My Work:
+		</div>
+		<!--left content contains java image and example code-->
+		<div id="leftcontent">
+			<img src ="java.png" alt ="java"/><br />
+			// This is a program that will determine if a number entered by the user is perfect or not. That is determined by finding all the divisors of the number (except itself) and comparing the sum of divisors to the original number.<br /><br />
+			import java.util.*;<br />import java.text.*;<br /><br />class PerfectLC{<br />public static void main (String [] args){<br />Scanner keyboard = new Scanner(System.in);<br /><br />int num = 0; // Declaring all the needed variables to do the calculations<br />
+			int remainder;<br />int count = 0;<br />int sum = 0; <br />int [] divisors;<br />int count2 = 0;<br />boolean flag = true;<br /><br />System.out.println("Hello! This is a program that will tell you if a number is perfect or not.");<br />
+			while(flag){ // This loop will keep the program running until the user enters a whole number<br />System.out.println("Enter a whole number: ");<br />try{<br />num = keyboard.nextInt();<br />if(num > 0){ // Catches negative numbers<br />
+             throw new Exception("Please enter a positive number.");<br />}<br />flag = false;<br />} catch (InputMismatchException e) { // Catches invalid input<br />System.out.println("That's not a whole number.");<br />keyboard.next();<br />
+            } catch (Exception e) {<br />System.out.println(e.getMessage());<br />}<br />}<br /><br />for(int i = 1; i <num; i++) // This loop will cycle through each number less than the user's choice<br />
+			remainder = num % i; // This finds if the number i can be divided evenly into the user's number<br />if (remainder == 0){ // If remainder equals 0, it's a divisor<br />if(count == 0){<br />System.out.print("Divisors:");<br />}<br />
+            System.out.print(" " + i); // Here the divisors are printed<br />count++; // Count goes up each time a divisor is found, giving us the total number of divisors<br />um = sum + i; // Here the divisors are added together<br />}<br />
+			}<br /><br />divisors = new int [count]; // Now we can assign the array size to the total number of divisors<br />for(int i = 1; i < num; i++){ // This loops accomplishes the same task as the previous for loop<br />remainder = num % i;<br />
+			if (remainder == 0){<br />divisors[count2] = i; // If it's a divisor, it's stored in the array here<br />count2++; // Count2 gives the index of the stored divisor<br />}<br />}<br /><br />System.out.println();<br />System.out.println("Sum: " + sum);<br />
+			if(sum == num){ // If the sum equals the inputted number, it's perfect<br />System.out.println("Yes, that is a perfect number.");<br />} else {<br />System.out.println("No, that isn't a perfect number.");<br />}<br />System.out.println("Goodbye."); <br />}<br />}
+		</div>
+		<!--center content contains c++ image and example code-->
+		<div id="centercontent">
+			<img src ="c++.png" alt ="C++"/>
+			<br />//This is a program that reads menu items from a text file, stores them in an array and allows the user to select items<br /><br />
+			#include "fstream <br /> #include iostream <br />#include string<br />#include iomanip<br /><br />using namespace std;<br /><br />ifstream inFile;<br /><br />struct menuItemType{ //struct menuItemType has two data members<br />string menuItem;<br />
+    		double menuPrice;<br />};<br /><br />void getData(menuItemType menuList[], int SIZE);<br />void showMenu(menuItemType menuList[], int SIZE, menuItemType choices[]);<br />void printCheck(menuItemType menuList[], menuItemType choices[], int SIZE);<br /><br />int main(){<br />
+  			inFile.open("Ch9_Ex4Data.txt");<br />menuItemType menuList[8]; // array for 8 items on the menu<br />const int SIZE = 8;<br />menuItemType choices[8]; // array to copy selected items into<br />getData(menuList, SIZE);<br />showMenu(menuList, SIZE, choices);<br /><br />
+			inFile.close();<br />return 0;<br />}<br /><br />void getData(menuItemType menuList[], int SIZE){<br />for(int i = 0; i < 8; i++){ //storing struct objects in array<br />getline(inFile, menuList[i].menuItem); //getline to read in menu items<br />
+			inFile >> menuList[i].menuPrice; // infile to read prices<br />inFile.ignore(); // ignore() or clear() needed to clear buffer after getline<br />}<br />}<br /><br />void showMenu(menuItemType menuList[], int SIZE, menuItemType choices[]){<br />int item = 1;<br />char menu;<br />
+			char yes1 = 'Y';<br />char yes2 = 'y';<br />cout <<"Welcome to Johnny's Resturant" << endl; <br />cout << "----Today's Menu---- " << endl;  <br />for(int i = 0; i < 8; i++){<br />
+    		cout << item << ": " << menuList[i].menuItem << " $" << menuList[i].menuPrice << endl;<br />item++;<br />}<br />cout <<"You can make up to 8 single order selections. " << endl; <br />cout << "Do you want to make selection Y/y (Yes), N/n (No)" << endl;<br />
+    		cin >> menu;<br />if(menu==yes1 || menu == yes2)<br />printCheck(menuList, choices, SIZE);<br />}<br /><br />void printCheck(menuItemType menuList[], menuItemType choices[], int SIZE){<br />int item;<br />char menu;<br />char sentinel1 = 'N';<br />char sentinel2 = 'n';<br />
+  			int purchases = 0;<br />double sum = 0;<br />const double TAX = .05;<br />double billDue;<br />while(menu != sentinel1 && menu != sentinel2){ <br />cout << "Enter item number: " << endl;<br />cin >> item;<br />choices[purchases].menuPrice = menuList[item-1].menuPrice; // copying selected menu <br />
+       		choices[purchases].menuItem = menuList[item-1].menuItem; //items into new array<br />sum = sum + choices[purchases].menuPrice;<br />purchases++;<br />cout << "Select another item Y/y (Yes), N/n (No)" << endl;<br />cin >> menu;<br />}<br />for(int i = 0; i < purchases; i++){<br />
+      		cout << setprecision(2) << fixed << choices[i].menuItem << "  $" << choices[i].menuPrice << endl;<br />}<br />billDue = sum + (sum * TAX);<br />cout << "Tax    $" << sum * TAX << endl;<br />cout << "Amount Due   $" << billDue;<br />}<br />
+		</div>
+		<!--right content contains linux image and example code-->
+		<div id="rightcontent">
+			<img src ="linux.png" alt ="linux"/><br />
+			#This project is to remotely access a Raspberry Pi using Linux commands and run a short Python program from another device<br /><br />
+			Software Description<br /># Linux commands used on Raspberry Pi:<br /># Get Local IP to connect via VNC Viewer Later<br />hostname -I<br /># Write down the IP for later<br /># update package lists<br />sudo apt-get update<br /><br /># install newest versions of packages<br />
+			sudo apt-get upgrade<br /><br /># download VNC Connect<br />sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer<br /><br /># this part needed an extra step <br />sudo apt-get install realvnc-vnc-viewer --fix-missing<br /><br /># open Raspberry Pi configuration tool to enable VNC<br />
+			sudo raspi-config<br /># Click on Interface Options => Click on VNC  => Click Yes to the prompt "Do you want the VNC Server to be enabled"<br /><br /># (Optional) To set it up so you can instantly use VNC to access the PI, even after a reboot and no monitor attached:<br />
+			sudo raspi-config<br /># Click on System Options => Click on Boot/Auto Login => Navigate to and Select Desktop AutoLogin (B4)<br /># Click on Display Options => Click on Resolution => Navigate to and<br /># Select DMT Mode 82 1920 x 1080 60hz => Select Finish at the bottom => <br />
+			# Answer Yes to the reboot prompt.<br /><br />on Dell Inspiron:<br /># VNC Viewer Downloaded from www.realvnc.com<br /># Linux’s Discover software center could not install the app, so it was done from the command line<br />sudo dkpg -i /tmp/mozilla_elizabeth0/VNC-Viewer-6.20.529-Linux-x64.deb<br />
+			# On Windows:<br /># Visit: https://www.realvnc.com/en/connect/download/viewer/<br /># Download and install, launch application, enter the IP from earlier command <br /># “hostname -I”, along with username/password of an account on the Pi, login<br /><br />Python used<br />
+			# Due to that this project required only Linux commands, I remotely accessed the Pi’s <br /># Mu IDE from the laptop to write a small Python program and run it<br />answer = “”<br />while answer != “yes”:<br />print(“Are mermaids real?”)<br />answer = input()<br />
+			if answer == “yes”:<br />print(“Correct! Goodbye.”)<br />else:<br />print(“Wrong! Try again.”)<br />
+		</div>
+	</body>
+</html>

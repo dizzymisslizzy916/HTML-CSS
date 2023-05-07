@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang = "en">
+ <head>
+    <title>Contact Me</title>
+    <meta charset="utf-8" />
+	<meta name="description" content="CIS117 Assignment 8" /> 
+	<meta name="author" content="Liz Crittenden" />
+	<meta name="keywords" content="html, tags, heading" />
+	
+	<!--external style-->
+	 <link rel = "stylesheet"  type = "text/css"
+          href = "ExternalFile.css" />
+  </head>
+  <body>
+  	<div id="topbanner">
+		<img src ="csc.jpg" alt ="cscpic">
+		<img src ="logo.jpg" alt ="mylogo">
+		<img src ="selfie.jpg" alt ="myselfie">
+	</div>
+	<h1>
+		<a href="resume.html">View my resume here.</a>
+		<a href="contact.html">Contact me here.</a>
+		<a href="skills.html">View my code examples here.</a><br />
+	</h1>
+	<p>
+			Contact me via this page:
+	</p>
+	<div id = "leftcontent">
+		Elizabeth Crittenden<br />
+		1600 Pennsylvania Avenue<br />
+		Washington, D.C. 20500
+	</div>
+	<div id = "centercontent">
+		ecrit1@brockport.edu<br />
+		(585)123-4567
+	</div>
+	<div id = "rightcontent">
+		<em>Or you may enter your questions and comments below and I will respond within 3 business days.</em>
+		<form> 
+			<label> <!--textarea widget -->
+				<textarea name="questions"  rows="3" cols="40"></textarea><br />
+			</label>
+			<label> <!--text widget -->
+				Phone: <input type = "text" name = "Phone" /><br />
+			</label>
+			<label> <!--text widget -->
+				Email: <input type = "text" name = "Email" /><br />
+			</label><!--action buttons widgets -->
+				<input type="submit" value="Submit" />
+				<input type="reset"  value="Clear Form" /> 
+		</form>
+	</div>
+  </body>
+ </html>
